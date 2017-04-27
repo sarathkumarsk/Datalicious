@@ -1,0 +1,25 @@
+from selenium import webdriver
+
+import time
+
+from selenium.webdriver.common.action_chains import ActionChains
+
+from selenium.webdriver.common.keys import Keys
+
+driver= webdriver.Chrome()
+
+driver.get('www.google.com')
+
+driver.maximize_window()
+
+driver.find_element_by_xpath("lst-ib").send_keys("Datalicious")
+
+driver.find_element_by_id('btnK').click()
+
+time.sleep(5)
+
+driver.find_element_by_xpath("//*[contains(text(),'Datalicious: Smarter Marketing')]").click()
+
+Actions action=new Actions(driver)
+
+action.sendkeys(Keys.F12)
